@@ -26,6 +26,12 @@ const Upload = () => {
         if(!uploadedFile) return setStatusText('Error: Failed to upload file');
 
         setStatusText('Converting to image...');
+        console.log("Converting file:", file);
+
+        const imageFile1 = await convertPdfToImage(file);
+        console.log("Conversion result:", imageFile1);
+
+        setStatusText('Converting to image...');
         const imageFile = await convertPdfToImage(file);
         if(!imageFile.file) return setStatusText('Error: Failed to convert PDF to image');
 
@@ -88,7 +94,7 @@ const Upload = () => {
                     {isProcessing ? (
                         <>
                             <h2>{statusText}</h2>
-                            <img src="/images/resume-scan.gif" className="w-full" />
+                            <img src="/images/resume-scan.gif" className="w-full" alt="resume-scan" />
                         </>
                     ) : (
                         <h2>Drop your resume for an ATS score and improvement tips</h2>
