@@ -45,8 +45,12 @@ export default function Home() {
         loadResumes();
     }, []);
 
+    const handleRemoveResume = (id: string) => {
+        setResumes(prev => prev.filter(r => r.id !== id));
+    };
 
-  return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
+
+    return <main className="bg-[url('/images/bg-main.svg')] bg-cover">
       <Navbar />
 
       <section className="main-section">
@@ -69,7 +73,11 @@ export default function Home() {
           {!loadingResumes && resumes.length > 0 && (
               <div className="resumes-section">
                   {resumes.map((resume) => (
-                      <ResumeCard key={resume.id} resume={resume} />
+                      <ResumeCard
+                          key={resume.id}
+                          resume={resume}
+                          onDelete={handleRemoveResume}
+                      />
                   ))}
               </div>
           )}
