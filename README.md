@@ -1,87 +1,52 @@
-# Welcome to React Router!
+# 📄 **AI Resume Analyzer**
 
-A modern, production-ready template for building full-stack React applications using React Router.
+A modern web app that leverages **AI-powered analysis** to evaluate resumes and provide structured insights.  
+Deployed at: [Live Demo URL](#) *(yet to be added)*  
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
-
-## Features
-
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
-
-## Getting Started
-
-### Installation
-
-Install the dependencies:
-
-```bash
-npm install
-```
-
-### Development
-
-Start the development server with HMR:
-
-```bash
-npm run dev
-```
-
-Your application will be available at `http://localhost:5173`.
-
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+⚠️ To try out the app, you’ll need a **Puter account**.  
 
 ---
 
-Built with ❤️ using React Router.
+## 🚀 **Features**
+
+- 🤖 **AI-powered resume analysis** with structured feedback  
+- 📂 **Secure storage** and user authentication via Puter  
+- 🎨 **Responsive UI** with Tailwind CSS  
+- ⚡ **Blazing-fast development** using Vite + React  
+- 🔀 **Modern routing** with React Router v7  
+- 🧩 **Global state management** with Zustand  
+
+---
+
+## 🛠️ **Tech Stack**
+
+### 🎨 **Frontend**
+- ![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB) → Component-based UI library for building scalable single-page apps  
+- ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) → Lightning-fast dev server & bundler  
+- ![TailwindCSS](https://img.shields.io/badge/TailwindCSS-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white) → Utility-first CSS framework for responsive design  
+- ![React Router](https://img.shields.io/badge/React%20Router-CA4245?style=for-the-badge&logo=reactrouter&logoColor=white) → Client-side routing with nested routes & data loaders  
+- ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) → Static typing for better tooling & maintainability  
+- ![Zustand](https://img.shields.io/badge/Zustand-000000?style=for-the-badge&logo=react&logoColor=white) → Minimal global state management  
+
+### ☁️ **Backend / Cloud**
+- ![Puter](https://img.shields.io/badge/Puter.com-0A66C2?style=for-the-badge&logo=icloud&logoColor=white) → Privacy-first internet OS for storage, auth & apps  
+- ![Puter.js](https://img.shields.io/badge/Puter.js-000000?style=for-the-badge&logo=javascript&logoColor=white) → Client-side SDK for serverless auth, storage, database & AI  
+
+---
+
+## 📦 **Installation & Setup**
+
+### 🔗 Cloning the Repository
+```bash
+git clone https://github.com/FilipFekete/ai-resume-analyzer.git
+cd ai-resume-analyzer
+```
+### 📥 Installing Dependencies
+```bash
+npm install
+```
+### ▶️ Running the Project
+```bash
+npm run dev
+```
+Open http://localhost:5173 in your browser.
