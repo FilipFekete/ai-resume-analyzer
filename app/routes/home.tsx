@@ -45,6 +45,7 @@ export default function Home() {
         loadResumes();
     }, []);
 
+    // for future when we have a logic to delete resumes from the database
     const handleRemoveResume = (id: string) => {
         setResumes(prev => prev.filter(r => r.id !== id));
     };
@@ -76,7 +77,6 @@ export default function Home() {
                       <ResumeCard
                           key={resume.id}
                           resume={resume}
-                          onDelete={handleRemoveResume}
                       />
                   ))}
               </div>
