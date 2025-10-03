@@ -1,7 +1,7 @@
 # 📄 **AI Resume Analyzer**
 
 A modern web app that leverages **AI-powered analysis** to evaluate resumes and provide structured insights.  
-Deployed at: [Live Demo URL](#) *(replace with your deployment link)*  
+Deployed at: [Live Demo URL](#) *(yet to be added)*  
 
 ⚠️ To try out the app, you’ll need a **Puter account**.  
 
