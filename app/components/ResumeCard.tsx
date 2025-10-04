@@ -10,36 +10,42 @@ type ResumeCardProps = {
 
 const ResumeCard = ({resume:{ id, companyName, jobTitle, feedback, imagePath}, onDelete} : ResumeCardProps) => {
 
-    const { fs } = usePuterStore();
+    const { fs, auth } = usePuterStore();
     const [resumeUrl, setResumeUrl] = useState('');
 
     useEffect(() => {
         const loadResumes = async () => {
-            const blob = await fs.read(imagePath);
-            if(!blob) return;
-            let url = URL.createObjectURL(blob);
-            setResumeUrl(url);
+            // If user is not authenticated, use the imagePath directly as a public asset
+            if (!auth.isAuthenticated) {
+                setResumeUrl(imagePath);
+                return;
+            }
+
+            // For authenticated users, read from filesystem
+            try {
+                const blob = await fs.read(imagePath);
+                if(!blob) return;
+                let url = URL.createObjectURL(blob);
+                setResumeUrl(url);
+            } catch (error) {
+                console.error('Error loading image:', error);
+                // Fallback to direct path if filesystem read fails
+                setResumeUrl(imagePath);
+            }
         }
 
         loadResumes();
-    }, [imagePath]);
 
-    // const handleDeleteClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
-    //     e.stopPropagation(); // extra safety so it never triggers navigation
-    //     e.preventDefault();
-    //     onDelete?.(id);
-    // };
+        // Cleanup function to revoke object URLs
+        return () => {
+            if (resumeUrl && resumeUrl.startsWith('blob:')) {
+                URL.revokeObjectURL(resumeUrl);
+            }
+        };
+    }, [imagePath, auth.isAuthenticated]);
 
     return (
         <div className="relative">
-            {/*<button*/}
-            {/*    type="button"*/}
-            {/*    aria-label="Remove resume"*/}
-            {/*    onClick={handleDeleteClick}*/}
-            {/*    className="absolute right-2 top-2 z-10 rounded-full bg-white/90 hover:bg-white text-gray-700 hover:text-red-600 border border-gray-200 shadow p-1 w-8 h-8 flex items-center justify-center"*/}
-            {/*>*/}
-            {/*    ×*/}
-            {/*</button>*/}
 
             <Link to={`/resume/${id}`} className="resume-card animate-in fade-in duration-1000">
                 <div className="resume-card-header">
