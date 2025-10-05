@@ -24,21 +24,20 @@ const Auth = () => {
     return (
         // Add top padding to avoid content being hidden behind the fixed navbar
         <main className="bg-[url('/images/bg-main.svg')] bg-cover min-h-screen flex flex-col pt-16">
-            {/* Fixed white navbar at the very top with extra right padding on the brand */}
-            {/*<nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow">*/}
-            {/*    <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">*/}
-            {/*        <div className="h-16 flex items-center justify-between ">*/}
-            {/*            <Link to="/" className="back-button flex items-center gap-2">*/}
-            {/*                <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />*/}
-            {/*                <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>*/}
-            {/*            </Link>*/}
+            <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="h-16 flex items-center justify-between ">
+                        <Link to="/" className="back-button flex items-center gap-2">
+                            <img src="/icons/back.svg" alt="logo" className="w-2.5 h-2.5" />
+                            <span className="text-gray-800 text-sm font-semibold">Back to Homepage</span>
+                        </Link>
 
-            {/*            <Link to="/" className="block">*/}
-            {/*                <p className="text-2xl font-bold text-gradient pr-10 sm:pr-14 lg:pr-20">RESUMIND</p>*/}
-            {/*            </Link>*/}
-            {/*        </div>*/}
-            {/*    </div>*/}
-            {/*</nav>*/}
+                        <Link to="/" className="block">
+                            <p className="text-2xl font-bold text-gradient pr-10 sm:pr-14 lg:pr-20">RESUMIND</p>
+                        </Link>
+                    </div>
+                </div>
+            </nav>
 
             {/* Split layout: left quote, right login card */}
             <div className="flex-1 grid grid-cols-1 lg:grid-cols-2">
