@@ -62,7 +62,23 @@ const Upload = () => {
             ? feedback.message.content
             : feedback.message.content[0].text;
 
-        data.feedback = JSON.parse(feedbackText);
+        try {
+            // Try to extract JSON if wrapped in markdown code blocks
+            let jsonText = feedbackText.trim();
+            
+            // Remove markdown code blocks if present
+            if (jsonText.startsWith('```')) {
+                jsonText = jsonText.replace(/^```(?:json)?\s*\n?/i, '').replace(/\n?```\s*$/, '');
+            }
+            
+            data.feedback = JSON.parse(jsonText);
+        } catch (error) {
+            console.error('Failed to parse feedback JSON:', error);
+            console.error('Feedback text:', feedbackText);
+            setStatusText('Error: Failed to parse AI response');
+            return;
+        }
+        
         await kv.set(`resume:${uuid}`, JSON.stringify(data));
         setStatusText('Analysis complete, redirecting...');
         console.log(data);
