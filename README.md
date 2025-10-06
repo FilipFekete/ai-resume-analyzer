@@ -1,9 +1,11 @@
 # 📄 **AI Resume Analyzer**
 
-A modern web app that leverages **AI-powered analysis** to evaluate resumes and provide structured insights.  
-Deployed at: [Live Demo URL](#) *(yet to be added)*  
+⚠️ To try out the app, you’ll need to create a free **Puter account**. Bear in mind that the account has limited AI-chat responses.
 
-⚠️ To try out the app, you’ll need a **Puter account**.  
+A modern web app that leverages **AI-powered analysis** to evaluate resumes and provide structured insights.  
+Deployed at: [**Live Demo**](https://ai-resume-analyzer-sigma-liard.vercel.app) 🌐   
+
+> ⚡ The app is **deployed using Vercel** to showcase its basic capabilities and provide a smooth live demo experience.
 
 ---
 
